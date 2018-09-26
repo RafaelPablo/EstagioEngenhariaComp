@@ -1,6 +1,6 @@
-# app_acessibilidade
+# Applicativo Acessibilidade  
 
-Aplicativo para avaliação de acessibilidade.
+Aplicativo para avaliação de acessibilidade utilizando Flutter e Firebase.
 
 ## Getting Started
 
