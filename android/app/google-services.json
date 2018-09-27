@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "577761934572",
+    "firebase_url": "https://appavaliacaoacessibilidade.firebaseio.com",
+    "project_id": "appavaliacaoacessibilidade",
+    "storage_bucket": "appavaliacaoacessibilidade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577761934572:android:e3e1a0d58c44d4c7",
+        "android_client_info": {
+          "package_name": "br.edu.unoesc.appacessibilidade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577761934572-bhnnusnvs887b387pvu5igintsgbtrr4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9YxBzc73MaO2ekw3LaCrI_02Nx-YbnQw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
