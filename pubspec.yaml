@@ -2,7 +2,7 @@ name: app_acessibilidade
 description: Aplicativo para avaliação de acessibilidade.
 
 dependencies:
-  cloud_firestore:
+  cloud_firestore: ^0.7.3
 
   flutter:
     sdk: flutter
