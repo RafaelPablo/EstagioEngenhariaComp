@@ -6,6 +6,7 @@
 // Aplicativo para avaliação de acessibilidade
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 
 class Acount extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class Acount extends StatefulWidget {
 }
 
 class _AcountState extends State<Acount> {
+  String _email, _senha;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -44,6 +46,9 @@ class _AcountState extends State<Acount> {
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
       initialValue: '',
+      validator: (value) =>
+          value.isEmpty ? 'O e-mail deve ser preenchido' : null,
+      onSaved: (value) => _email = value,
       decoration: InputDecoration(
           hintText: 'Email',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -55,12 +60,38 @@ class _AcountState extends State<Acount> {
       autofocus: false,
       initialValue: '',
       obscureText: true,
+      validator: (value) =>
+          value.isEmpty ? 'A senha deve ser preenchida' : null,
+      onSaved: (value) => _senha = value,
       decoration: InputDecoration(
           hintText: 'Senha',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
+
+//    bool validarLogar() {
+//      final form = formKey.currentState;
+//      if (form.validate()) {
+//        form.save();
+//        return true;
+//      } else {
+//        return false;
+//      }
+//    }
+
+//    void validarEnviar() async {
+//      if (validarLogar()) {
+//        try {
+//          FirebaseUser user = await FirebaseAuth.instance
+//              .createUserWithEmailAndPassword(email: _email, password: _senha);
+//          print('Registrou, id: ${user.uid}');
+//        } catch (e) {
+//          print('Erro: $e');
+//        }
+//        Navigator.of(context).pushNamed(HomePage.tag);
+//      }
+//    }
 
     final createButton = Padding(
         padding: EdgeInsets.symmetric(vertical: 16.0),
@@ -71,9 +102,7 @@ class _AcountState extends State<Acount> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: () {
-                Navigator.of(context).pushNamed(HomePage.tag);
-              },
+              onPressed: () {},
               color: Colors.lightBlueAccent,
               child: Text('Criar Conta', style: TextStyle(color: Colors.white)),
             )));

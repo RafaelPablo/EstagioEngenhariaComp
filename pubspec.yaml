@@ -7,6 +7,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  firebase_auth: 0.5.20
+
 cupertino_icons: ^0.1.2
 
 dev_dependencies:

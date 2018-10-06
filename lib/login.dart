@@ -7,6 +7,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'acount.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  String _email, _senha;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -30,7 +32,11 @@ class _LoginState extends State<Login> {
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
       initialValue: '',
+      validator: (value) =>
+          value.isEmpty ? 'O e-mail deve ser preenchido' : null,
+      onSaved: (value) => _email = value,
       decoration: InputDecoration(
+          labelText: 'Email',
           hintText: 'Email',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
           border:
@@ -41,12 +47,40 @@ class _LoginState extends State<Login> {
       autofocus: false,
       initialValue: '',
       obscureText: true,
+      validator: (value) =>
+          value.isEmpty ? 'A senha deve ser preenchida' : null,
+      onSaved: (value) => _senha = value,
       decoration: InputDecoration(
+          labelText: 'Senha',
           hintText: 'Senha',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
+
+    final formKey = new GlobalKey<FormState>();
+
+    bool validarLogar() {
+      final form = formKey.currentState;
+      if (form.validate()) {
+        form.save();
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    void validarEnviar() async {
+      if (validarLogar()) {
+        try {
+          FirebaseUser user = await FirebaseAuth.instance
+              .signInWithEmailAndPassword(email: _email, password: _senha);
+          print('Acessou, id: ${user.uid}');
+        } catch (e) {
+          print('Erro: $e');
+        }
+      }
+    }
 
     final loginButton = Padding(
         padding: EdgeInsets.symmetric(vertical: 16.0),
@@ -57,9 +91,8 @@ class _LoginState extends State<Login> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: () {
-                Navigator.of(context).pushNamed(HomePage.tag);
-              },
+              onPressed: validarEnviar,
+              //Navigator.of(context).pushNamed(HomePage.tag);
               color: Colors.lightBlueAccent,
               child: Text('Acessar', style: TextStyle(color: Colors.white)),
             )));
