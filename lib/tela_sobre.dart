@@ -5,7 +5,7 @@
 // Engenharia de Computação 2018
 // Aplicativo para avaliação de acessibilidade
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'package:app_acessibilidade/login_screen.dart';
 
 class About extends StatelessWidget {
   static String tag = 'about';
@@ -15,9 +15,9 @@ class About extends StatelessWidget {
     final acessibilidade = Hero(
       tag: 'acessibilidade',
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(36.0),
         child: CircleAvatar(
-          radius: 72.0,
+          radius: 48.0,
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage('imagens/acessibilidadeONU.jpg'),
         ),
@@ -27,8 +27,8 @@ class About extends StatelessWidget {
     final welcome = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Bem vindo',
-        style: TextStyle(fontSize: 28.0, color: Colors.white),
+        'Sobre',
+        style: TextStyle(fontSize: 22.0, color: Colors.white),
       ),
     );
 
@@ -36,11 +36,11 @@ class About extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: Text(
           'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.',
-          style: TextStyle(fontSize: 16.0, color: Colors.white)),
+          style: TextStyle(fontSize: 14.0, color: Colors.white)),
     );
 
     final backButton = Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
+        padding: EdgeInsets.symmetric(vertical: 10.0),
         child: Material(
             borderRadius: BorderRadius.circular(30.0),
             shadowColor: Colors.lightBlueAccent.shade100,
@@ -51,9 +51,17 @@ class About extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamed(Login.tag);
               },
-              color: Colors.lightBlueAccent,
-              child: Text('Acessar', style: TextStyle(color: Colors.white)),
+              child: Text('Voltar',
+                  style: TextStyle(color: Colors.lightBlueAccent)),
             )));
+
+    final rights = Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Text(
+        'Todos os direitos reservados.',
+        style: TextStyle(fontSize: 14.0, color: Colors.white),
+      ),
+    );
 
     final body = Container(
         width: MediaQuery.of(context).size.width,
@@ -64,8 +72,13 @@ class About extends StatelessWidget {
             Colors.lightBlueAccent,
           ]),
         ),
-        child: Column(
-            children: <Widget>[acessibilidade, welcome, lorem, backButton]));
+        child: Column(children: <Widget>[
+          acessibilidade,
+          welcome,
+          lorem,
+          backButton,
+          rights
+        ]));
 
     return new Scaffold(
       body: body,
