@@ -4,24 +4,7 @@
             "outputFile": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\a8adf0292b647620c3d9b78b03456fbf\\res\\values-en-rGB\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "196",
-                        "endOffsets": "447"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1245",
-                        "endColumns": "196",
-                        "endOffsets": "1437"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a079d06dc89d2cb4e476420b9283f610\\res\\values-en-rGB\\values.xml",
+                    "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\f546d01882299b4d31742848d680be2f\\res\\values-en-rGB\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -35,6 +18,23 @@
                         "startOffsets": "105,212,396,523,632,842,967,1113,1442,1660,1767,1950,2077,2282,2460,2553,2645",
                         "endColumns": "106,183,126,108,209,124,145,131,217,106,182,126,204,177,92,91,107",
                         "endOffsets": "207,391,518,627,837,962,1108,1240,1655,1762,1945,2072,2277,2455,2548,2640,2748"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\9d790734ae082e0ad7fb330d1128c6ae\\res\\values-en-rGB\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "196",
+                        "endOffsets": "447"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1245",
+                        "endColumns": "196",
+                        "endOffsets": "1437"
                     }
                 },
                 {

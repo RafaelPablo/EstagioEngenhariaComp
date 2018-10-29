@@ -5,7 +5,7 @@
 // Engenharia de Computação 2018
 // Aplicativo para avaliação de acessibilidade
 import 'package:flutter/material.dart';
-import 'package:app_acessibilidade/login_screen.dart';
+import 'package:app_acessibilidade/tela_login.dart';
 
 class About extends StatelessWidget {
   static String tag = 'about';

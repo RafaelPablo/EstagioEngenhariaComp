@@ -5,16 +5,15 @@
 // Engenharia de Computação 2018
 // Aplicativo para avaliação de acessibilidade
 import 'package:flutter/material.dart';
-import 'package:app_acessibilidade/login_screen.dart';
+import 'package:app_acessibilidade/tela_login.dart';
 
-class Acount extends StatefulWidget {
-  @override
-  static String tag = 'acount';
-  _AcountState createState() => _AcountState();
+class Conta extends StatefulWidget {
+  static String tag = 'Conta';
+  _ContaState createState() => _ContaState();
 }
 
-class _AcountState extends State<Acount> {
-  String _email, _senha;
+class _ContaState extends State<Conta> {
+  //String _email, _senha;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(

@@ -5,12 +5,13 @@
 // Engenharia de Computação 2018
 // Aplicativo para avaliação de acessibilidade
 import 'package:flutter/material.dart';
-import 'package:app_acessibilidade/Classes/acount.dart';
+import 'package:app_acessibilidade/tela_cadastro_conta.dart';
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app_acessibilidade/about_screen.dart';
+import 'package:app_acessibilidade/tela_sobre.dart';
+import 'tela_lista_obras.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -18,8 +19,7 @@ String _email, _senha;
 SharedPreferences sharedPreferences;
 
 class Login extends StatefulWidget {
-  Future<String> _message = Future<String>.value('');
-  @override
+  //Future<String> _message = Future<String>.value('');
   static String tag = 'login';
   _LoginState createState() => _LoginState();
 }
@@ -104,12 +104,11 @@ class _LoginState extends State<Login> {
         child: Material(
             borderRadius: BorderRadius.circular(30.0),
             shadowColor: Colors.lightBlueAccent.shade100,
-//            elevation: 5.0,
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
               onPressed: () {
-                Navigator.of(context).pushNamed(Login.tag);
+                Navigator.of(context).pushNamed(ListaObras.tag);
               },
               //  onPressed: _SignInWithEmail,
               color: Colors.lightBlueAccent,
@@ -134,7 +133,7 @@ class _LoginState extends State<Login> {
     final createLabel = FlatButton(
       child: Text('Criar conta', style: TextStyle(color: Colors.black54)),
       onPressed: () {
-        Navigator.of(context).pushNamed(Acount.tag);
+        Navigator.of(context).pushNamed(Conta.tag);
       },
     );
 

@@ -5,11 +5,16 @@
 // Engenharia de Computação 2018
 // Aplicativo para avaliação de acessibilidade
 import 'package:flutter/material.dart';
-import 'login.dart';
-import 'home_page.dart';
-import 'acount.dart';
-import 'building.dart';
-import 'about.dart';
+import 'package:app_acessibilidade/tela_sobre.dart';
+import 'package:app_acessibilidade/tela_login.dart';
+import 'tela_lista_obras.dart';
+import 'tela_cadastro_conta.dart';
+import 'tela_cadastro_obra.dart';
+import 'tela_editar_obra.dart';
+import 'tela_principal_avaliacao.dart';
+import 'tela_avaliacao_porta_a.dart';
+import 'tela_avaliacao_porta_b.dart';
+import 'tela_avaliacao_porta_c.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
@@ -19,10 +24,15 @@ void main() {
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     Login.tag: (context) => Login(),
-    HomePage.tag: (context) => HomePage(),
-    Acount.tag: (context) => Acount(),
-    Building.tag: (context) => Building(),
-    About.tag: (context) => About()
+    ListaObras.tag: (context) => ListaObras(),
+    Conta.tag: (context) => Conta(),
+    CadastroObra.tag: (context) => CadastroObra(),
+    About.tag: (context) => About(),
+    EditarObra.tag: (context) => EditarObra(),
+    PrincipalAvaliacao.tag: (context) => PrincipalAvaliacao(),
+    AvaliacaoPortaA.tag: (context) => AvaliacaoPortaA(),
+    AvaliacaoPortaB.tag: (context) => AvaliacaoPortaB(),
+    AvaliacaoPortaC.tag: (context) => AvaliacaoPortaC()
   };
 
   @override
