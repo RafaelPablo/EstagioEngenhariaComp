@@ -7,11 +7,15 @@
 import 'package:flutter/material.dart';
 import 'package:app_acessibilidade/tela_sobre.dart';
 import 'package:app_acessibilidade/tela_login.dart';
-import 'tela_lista_obras.dart';
+import 'tela_lista_imoveis.dart';
+import 'tela_lista_sanitarios.dart';
 import 'tela_cadastro_conta.dart';
-import 'tela_cadastro_obra.dart';
-import 'tela_editar_obra.dart';
+import 'tela_cadastro_imovel.dart';
+import 'tela_cadastro_sanitario.dart';
+import 'tela_editar_imovel.dart';
+import 'tela_editar_sanitario.dart';
 import 'tela_principal_avaliacao.dart';
+import 'tela_principal_avaliacao_sanitario.dart';
 import 'tela_avaliacao_porta_a.dart';
 import 'tela_avaliacao_porta_b.dart';
 import 'tela_avaliacao_porta_c.dart';
@@ -24,12 +28,16 @@ void main() {
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     Login.tag: (context) => Login(),
-    ListaObras.tag: (context) => ListaObras(),
+    ListaImoveis.tag: (context) => ListaImoveis(),
+    ListaSanitarios.tag: (context) => ListaSanitarios(),
     Conta.tag: (context) => Conta(),
-    CadastroObra.tag: (context) => CadastroObra(),
+    CadastroImovel.tag: (context) => CadastroImovel(),
+    CadastroSanitario.tag: (context) => CadastroSanitario(),
     About.tag: (context) => About(),
-    EditarObra.tag: (context) => EditarObra(),
+    EditarImovel.tag: (context) => EditarImovel(),
+    EditarSanitario.tag: (context) => EditarSanitario(),
     PrincipalAvaliacao.tag: (context) => PrincipalAvaliacao(),
+    PrincipalAvaliacaoSanitario.tag: (context) => PrincipalAvaliacaoSanitario(),
     AvaliacaoPortaA.tag: (context) => AvaliacaoPortaA(),
     AvaliacaoPortaB.tag: (context) => AvaliacaoPortaB(),
     AvaliacaoPortaC.tag: (context) => AvaliacaoPortaC()
