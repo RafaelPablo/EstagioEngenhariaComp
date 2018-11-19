@@ -1,14 +1,10 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-// Rafael Pablo Massocato
-// Engenharia de Computação 2018
-// Aplicativo para avaliação de acessibilidade
-import 'dart:async';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'tela_principal_avaliacao.dart';
-import 'tela_cadastro_imovel.dart';
+/* Copyright 2018 Rafael Pablo. All rights reserved.
+*  Use of this source code is governed by a BSD-style license that can be
+*  found in the LICENSE file.
+*  Rafael Pablo Massocato
+*  Estágio Engenharia de Computação 2018
+*  Aplicativo para avaliação de acessibilidade */
+part of acessibilidade_app;
 
 class ListaImoveis extends StatefulWidget {
   static String tag = 'ListaImoveis';

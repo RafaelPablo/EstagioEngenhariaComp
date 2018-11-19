@@ -1,20 +1,18 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-// Rafael Pablo Massocato
-// Engenharia de Computação 2018
-// Aplicativo para avaliação de acessibilidade
-import 'package:flutter/material.dart';
-import 'package:app_acessibilidade/tela_login.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+/* Copyright 2018 Rafael Pablo. All rights reserved.
+*  Use of this source code is governed by a BSD-style license that can be
+*  found in the LICENSE file.
+*  Rafael Pablo Massocato
+*  Estágio Engenharia de Computação 2018
+*  Aplicativo para avaliação de acessibilidade */
+part of acessibilidade_app;
 
-class Conta extends StatefulWidget {
-  static String tag = 'Conta';
-  _ContaState createState() => _ContaState();
+class Avaliador extends StatefulWidget {
+  static String tag = 'Avaliador';
+  _AvaliadorState createState() => _AvaliadorState();
 }
 
-class _ContaState extends State<Conta> {
-  String _registro, _nome, _email, _senha, _telefone;
+class _AvaliadorState extends State<Avaliador> {
+  String _registro, _nome, _telefone;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -27,7 +25,8 @@ class _ContaState extends State<Conta> {
     );
 
     final descriptionLabel = FlatButton(
-      child: Text('Criar conta', style: TextStyle(color: Colors.black54)),
+      child:
+          Text('Cadastrar avaliador', style: TextStyle(color: Colors.black54)),
       onPressed: () {},
     );
 
@@ -67,30 +66,6 @@ class _ContaState extends State<Conta> {
           _telefone = val;
         });
 
-    final email = TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        autofocus: false,
-        decoration: InputDecoration(
-            hintText: 'Email',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-        onSaved: (String val) {
-          _email = val;
-        });
-
-    final password = TextFormField(
-        autofocus: false,
-        obscureText: true,
-        decoration: InputDecoration(
-            hintText: 'Senha',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-        onSaved: (String val) {
-          _senha = val;
-        });
-
     void _criarConta() {
       Firestore.instance.runTransaction((Transaction transaction) async {
         CollectionReference reference =
@@ -99,13 +74,11 @@ class _ContaState extends State<Conta> {
         await reference.add({
           "Chave": null,
           "Nome": "$_nome",
-          "Email": "$_email",
-          "Senha": "$_senha",
           "Registro": "$_registro",
           "Telefone": "$_telefone"
         });
       });
-      Navigator.of(context).pushNamed(Login.tag);
+      Navigator.of(context).pushNamed(Principal.tag);
     }
 
     final createButton = Padding(
@@ -131,7 +104,8 @@ class _ContaState extends State<Conta> {
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
-        title: new Text("Criar conta", style: TextStyle(color: Colors.white)),
+        title: new Text("Cadastrar avaliador",
+            style: TextStyle(color: Colors.white)),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -148,10 +122,6 @@ class _ContaState extends State<Conta> {
           name,
           SizedBox(height: 8.0),
           telefone,
-          SizedBox(height: 8.0),
-          email,
-          SizedBox(height: 8.0),
-          password,
           SizedBox(height: 24.0),
           createButton
         ],

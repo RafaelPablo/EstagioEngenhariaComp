@@ -1,13 +1,10 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-// Rafael Pablo Massocato
-// Engenharia de Computação 2018
-// Aplicativo para avaliação de acessibilidade
-import 'package:flutter/material.dart';
-import 'tela_editar_imovel.dart';
-import 'tela_lista_sanitarios.dart';
-import 'dart:async';
+/* Copyright 2018 Rafael Pablo. All rights reserved.
+*  Use of this source code is governed by a BSD-style license that can be
+*  found in the LICENSE file.
+*  Rafael Pablo Massocato
+*  Estágio Engenharia de Computação 2018
+*  Aplicativo para avaliação de acessibilidade */
+part of acessibilidade_app;
 
 class PrincipalAvaliacao extends StatefulWidget {
   static String tag = 'PrincipalAvaliacao';
@@ -90,6 +87,19 @@ class _PrincipalAvaliacaoState extends State<PrincipalAvaliacao> {
               child: Text('Sanitários', style: TextStyle(color: Colors.white)),
             )));
 
+    final resultadoButton = Padding(
+        padding: EdgeInsets.symmetric(vertical: 16.0),
+        child: Material(
+            borderRadius: BorderRadius.circular(30.0),
+            shadowColor: Colors.lightBlue.shade100,
+            child: MaterialButton(
+              minWidth: 200.0,
+              height: 42.0,
+              onPressed: _mensagemAlerta,
+              color: Colors.lightBlue,
+              child: Text('Resultado', style: TextStyle(color: Colors.white)),
+            )));
+
     return Scaffold(
       appBar: new AppBar(
           iconTheme: IconThemeData(
@@ -118,6 +128,8 @@ class _PrincipalAvaliacaoState extends State<PrincipalAvaliacao> {
           acessoButton,
           SizedBox(height: 2.0),
           sanitarioButton,
+          SizedBox(height: 2.0),
+          resultadoButton,
           SizedBox(height: 2.0),
         ],
       )),

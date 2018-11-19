@@ -1,17 +1,17 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-// Rafael Pablo Massocato
-// Engenharia de Computação 2018
-// Aplicativo para avaliação de acessibilidade
-import 'package:flutter/material.dart';
+/* Copyright 2018 Rafael Pablo. All rights reserved.
+*  Use of this source code is governed by a BSD-style license that can be
+*  found in the LICENSE file.
+*  Rafael Pablo Massocato
+*  Estágio Engenharia de Computação 2018
+*  Aplicativo para avaliação de acessibilidade */
+part of acessibilidade_app;
 
-class CadastroImovel extends StatefulWidget {
-  static String tag = 'CadastroImovel';
-  _CadastroImovelState createState() => _CadastroImovelState();
+class EditarImovel extends StatefulWidget {
+  static String tag = 'EditarImovel';
+  _EditarImovelState createState() => _EditarImovelState();
 }
 
-class _CadastroImovelState extends State<CadastroImovel> {
+class _EditarImovelState extends State<EditarImovel> {
   final logo = Hero(
     tag: 'logo',
     child: CircleAvatar(
@@ -22,7 +22,7 @@ class _CadastroImovelState extends State<CadastroImovel> {
   );
 
   final descriptionLabel = FlatButton(
-    child: Text('Registrar Imóvel', style: TextStyle(color: Colors.black54)),
+    child: Text('Editar imóvel', style: TextStyle(color: Colors.black54)),
     onPressed: () {},
   );
 
@@ -31,6 +31,15 @@ class _CadastroImovelState extends State<CadastroImovel> {
     initialValue: '',
     decoration: InputDecoration(
         hintText: 'Identificação',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+  );
+
+  final emailResponsavel = TextFormField(
+    autofocus: false,
+    initialValue: '',
+    decoration: InputDecoration(
+        hintText: 'Email do responsável',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
   );
@@ -118,7 +127,7 @@ class _CadastroImovelState extends State<CadastroImovel> {
             height: 42.0,
             onPressed: () {},
             color: Colors.lightBlueAccent,
-            child: Text('Cadastrar', style: TextStyle(color: Colors.white)),
+            child: Text('Alterar', style: TextStyle(color: Colors.white)),
           )));
 
   @override
@@ -128,8 +137,7 @@ class _CadastroImovelState extends State<CadastroImovel> {
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
-        title:
-            new Text("Registrar imóvel", style: TextStyle(color: Colors.white)),
+        title: new Text("Editar imóvel", style: TextStyle(color: Colors.white)),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -142,6 +150,8 @@ class _CadastroImovelState extends State<CadastroImovel> {
           descriptionLabel,
           SizedBox(height: 8.0),
           identificacao,
+          SizedBox(height: 8.0),
+          emailResponsavel,
           SizedBox(height: 8.0),
           logradouro,
           SizedBox(height: 8.0),
