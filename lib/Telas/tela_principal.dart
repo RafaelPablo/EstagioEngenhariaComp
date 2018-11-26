@@ -6,12 +6,12 @@
 *  Aplicativo para avaliação de acessibilidade */
 part of acessibilidade_app;
 
-class PrincipalAvaliacao extends StatefulWidget {
+class Principal extends StatefulWidget {
   static String tag = 'PrincipalAvaliacao';
-  _PrincipalAvaliacaoState createState() => _PrincipalAvaliacaoState();
+  _PrincipalState createState() => _PrincipalState();
 }
 
-class _PrincipalAvaliacaoState extends State<PrincipalAvaliacao> {
+class _PrincipalState extends State<Principal> {
   final logo = Hero(
     tag: 'logo',
     child: CircleAvatar(
@@ -81,7 +81,7 @@ class _PrincipalAvaliacaoState extends State<PrincipalAvaliacao> {
               minWidth: 200.0,
               height: 42.0,
               onPressed: () {
-                Navigator.of(context).pushNamed(ListaSanitarios.tag);
+                Navigator.of(context).pushNamed(Lista.tag);
               },
               color: Colors.lightBlueAccent,
               child: Text('Sanitários', style: TextStyle(color: Colors.white)),
@@ -95,7 +95,9 @@ class _PrincipalAvaliacaoState extends State<PrincipalAvaliacao> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: _mensagemAlerta,
+              onPressed: () {
+                Navigator.of(context).pushNamed(Laudo.tag);
+              },
               color: Colors.lightBlue,
               child: Text('Resultado', style: TextStyle(color: Colors.white)),
             )));

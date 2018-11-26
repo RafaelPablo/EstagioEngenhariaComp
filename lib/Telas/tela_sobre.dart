@@ -1,11 +1,10 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-// Rafael Pablo Massocato
-// Engenharia de Computação 2018
-// Aplicativo para avaliação de acessibilidade
-import 'package:flutter/material.dart';
-import 'package:app_acessibilidade/tela_login.dart';
+/* Copyright 2018 Rafael Pablo. All rights reserved.
+*  Use of this source code is governed by a BSD-style license that can be
+*  found in the LICENSE file.
+*  Rafael Pablo Massocato
+*  Estágio Engenharia de Computação 2018
+*  Aplicativo para avaliação de acessibilidade */
+part of acessibilidade_app;
 
 class About extends StatelessWidget {
   static String tag = 'about';
@@ -35,8 +34,15 @@ class About extends StatelessWidget {
     final lorem = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-          'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.',
-          style: TextStyle(fontSize: 14.0, color: Colors.white)),
+          'Este aplicativo foi desenvolvido pelo acadêmico Rafael Pablo Massocato, '
+          'durante o Estágio Curricular do Curso de Engenharia de Computação '
+          'da Universidade do Oeste de Santa Catarina, com base na pesquisa realizada '
+          'pelas professoras Angela Zamboni Piovesan e Rogeria Ramos. Seu objetivo é '
+          'auxiliar na avaliação e registro de acessibilidade especial em edificações públicas.',
+          style: TextStyle(
+            fontSize: 14.0,
+            color: Colors.white,
+          )),
     );
 
     final backButton = Padding(
@@ -58,7 +64,7 @@ class About extends StatelessWidget {
     final rights = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Todos os direitos reservados.',
+        'Versão 1.0.0',
         style: TextStyle(fontSize: 14.0, color: Colors.white),
       ),
     );

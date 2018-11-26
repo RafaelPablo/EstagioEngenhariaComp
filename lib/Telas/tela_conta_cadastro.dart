@@ -12,7 +12,7 @@ class Conta extends StatefulWidget {
 }
 
 class _ContaState extends State<Conta> {
-  String _registro, _nome, _email, _senha, _telefone;
+  String _email, _senha;
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -28,42 +28,6 @@ class _ContaState extends State<Conta> {
       child: Text('Criar conta', style: TextStyle(color: Colors.black54)),
       onPressed: () {},
     );
-
-    final name = TextFormField(
-        autofocus: false,
-        initialValue: '',
-        decoration: InputDecoration(
-            hintText: 'Nome',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-        onSaved: (String val) {
-          _nome = val;
-        });
-
-    final registro = TextFormField(
-        autofocus: false,
-        initialValue: '',
-        decoration: InputDecoration(
-            hintText: 'Registro no conselho de classe',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-        onSaved: (String val) {
-          _registro = val;
-        });
-
-    final telefone = TextFormField(
-        autofocus: false,
-        initialValue: '',
-        decoration: InputDecoration(
-            hintText: 'Telefone',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
-        onSaved: (String val) {
-          _telefone = val;
-        });
 
     final email = TextFormField(
         keyboardType: TextInputType.emailAddress,
@@ -96,11 +60,8 @@ class _ContaState extends State<Conta> {
 
         await reference.add({
           "Chave": null,
-          "Nome": "$_nome",
           "Email": "$_email",
           "Senha": "$_senha",
-          "Registro": "$_registro",
-          "Telefone": "$_telefone"
         });
       });
       Navigator.of(context).pushNamed(Login.tag);
@@ -140,12 +101,6 @@ class _ContaState extends State<Conta> {
           logo,
           SizedBox(height: 48.0),
           descriptionLabel,
-          SizedBox(height: 8.0),
-          registro,
-          SizedBox(height: 8.0),
-          name,
-          SizedBox(height: 8.0),
-          telefone,
           SizedBox(height: 8.0),
           email,
           SizedBox(height: 8.0),

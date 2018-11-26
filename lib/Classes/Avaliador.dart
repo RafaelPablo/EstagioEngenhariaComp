@@ -1,45 +1,42 @@
-class Conta {
+// Copyright 2017 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+// Rafael Pablo Massocato
+// Engenharia de Computação 2018
+// Aplicativo para avaliação de acessibilidade
+part of acessibilidade_app;
+
+class Avaliador {
   final String chave;
   String nome;
-  String email;
   String registro;
   String telefone;
-  String senha;
   bool completed;
 
-  Conta({
-    this.chave,
-    this.nome,
-    this.email,
-    this.registro,
-    this.telefone,
-    this.senha,
+  Avaliador({
+    @required this.chave,
+    @required this.nome,
+    @required this.registro,
+    @required this.telefone,
     this.completed = false,
   })  : assert(chave != null && chave.isNotEmpty),
         assert(nome != null && nome.isNotEmpty),
-        assert(email != null && email.isNotEmpty),
         assert(registro != null && registro.isNotEmpty),
-        assert(senha != null && senha.isNotEmpty),
         assert(telefone != null && telefone.isNotEmpty),
         assert(completed != null);
 
-  Conta.fromMap(Map<String, dynamic> data)
-      : this(chave: data['chave'],
-      nome: data['nome'],
-      email: data['email'],
-      registro: data['registro'],
-      telefone: data['telefone'],
-      senha: data['senha'],
-      ??
-      false);
+  Avaliador.fromMap(Map<String, dynamic> data)
+      : this(
+            chave: data['chave'],
+            nome: data['nome'],
+            registro: data['registro'],
+            telefone: data['telefone'],
+            completed: data['completed'] ?? false);
 
-  Map<String, dynamic> toMap() =>
-      {
+  Map<String, dynamic> toMap() => {
         'chave': this.chave,
         'nome': this.nome,
-        'email': this.email,
         'registro': this.registro,
         'telefone': this.telefone,
-        'senha': this.senha,
       };
 }

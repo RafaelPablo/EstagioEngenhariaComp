@@ -1,22 +1,12 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-// Rafael Pablo Massocato
-// Engenharia de Computação 2018
-// Aplicativo para avaliação de acessibilidade
-import 'package:flutter/material.dart';
-import 'package:app_acessibilidade/tela_cadastro_conta.dart';
-import 'dart:async';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app_acessibilidade/tela_sobre.dart';
-import 'tela_lista_imoveis.dart';
+/* Copyright 2018 Rafael Pablo. All rights reserved.
+*  Use of this source code is governed by a BSD-style license that can be
+*  found in the LICENSE file.
+*  Rafael Pablo Massocato
+*  Estágio Engenharia de Computação 2018
+*  Aplicativo para avaliação de acessibilidade */
+part of acessibilidade_app;
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
-final GoogleSignIn _googleSignIn = GoogleSignIn();
 String _email, _senha;
-SharedPreferences sharedPreferences;
 
 class Login extends StatefulWidget {
   //Future<String> _message = Future<String>.value('');
@@ -24,38 +14,23 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-Future<String> _SignInWithGoogle() async {
-  final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-  final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-  final FirebaseUser user = await _auth.signInWithGoogle(
-    accessToken: googleAuth.accessToken,
-    idToken: googleAuth.idToken,
-  );
-  assert(user.email != null);
-  assert(user.displayName != null);
-  assert(!user.isAnonymous);
-  assert(await user.getIdToken() != null);
-  final FirebaseUser currentUser = await _auth.currentUser();
-  assert(user.uid == currentUser.uid);
-  print("Acesso Google: $user");
-
-  return '$user';
-}
-
-Future<String> _SignInWithEmail() async {
-  final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-  final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-  final FirebaseUser user =
-      await _auth.signInWithEmailAndPassword(email: _email, password: _senha);
-  assert(user.email != null);
-  assert(user.displayName != null);
-  assert(!user.isAnonymous);
-  assert(await user.getIdToken() != null);
-  final FirebaseUser currentUser = await _auth.currentUser();
-  assert(user.uid == currentUser.uid);
-  print("Acesso E-mail: $user");
-  return 'signInWithGoogle succeeded: $user';
-}
+//Future<String> _SignInWithGoogle() async {
+//  final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+//  final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+//  final FirebaseUser user = await _auth.signInWithGoogle(
+//    accessToken: googleAuth.accessToken,
+//    idToken: googleAuth.idToken,
+//  );
+//  assert(user.email != null);
+//  assert(user.displayName != null);
+//  assert(!user.isAnonymous);
+//  assert(await user.getIdToken() != null);
+//  final FirebaseUser currentUser = await _auth.currentUser();
+//  assert(user.uid == currentUser.uid);
+//  print("Acesso Google: $user");
+//
+//  return '$user';
+//}
 
 class _LoginState extends State<Login> {
   TextEditingController emailC = new TextEditingController();
@@ -124,7 +99,7 @@ class _LoginState extends State<Login> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: _SignInWithGoogle,
+              onPressed: signInWithGoogle,
               color: Colors.lightBlueAccent,
               child: Text('Acessar com Google',
                   style: TextStyle(color: Colors.white)),

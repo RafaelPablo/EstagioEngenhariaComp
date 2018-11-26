@@ -91,7 +91,7 @@ class _ListaImoveisState extends State<ListaImoveis> {
                 backgroundColor: Colors.lightBlueAccent,
                 child: Icon(Icons.add),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(PrincipalAvaliacao.tag);
+                  Navigator.of(context).pushNamed(Principal.tag);
                 })));
   }
 }

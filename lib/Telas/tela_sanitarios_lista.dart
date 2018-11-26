@@ -150,10 +150,17 @@ class ListaSanitariosState extends State<ListaSanitarios> {
               new DrawerHeader(
                 child: new Center(
                   child: new Text(
-                    "Sanitários",
+                    "Menu",
                     style: themeData.textTheme.title,
                   ),
                 ),
+              ),
+              new ListTile(
+                title: const Text('Avaliador', textAlign: TextAlign.right),
+                trailing: const Icon(Icons.assignment_ind),
+                onTap: () async {
+                  Navigator.of(context).pushNamed(AvaliadorCadastro.tag);
+                },
               ),
               new ListTile(
                 title: const Text('Logout', textAlign: TextAlign.right),

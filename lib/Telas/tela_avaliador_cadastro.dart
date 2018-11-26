@@ -6,12 +6,12 @@
 *  Aplicativo para avaliação de acessibilidade */
 part of acessibilidade_app;
 
-class Avaliador extends StatefulWidget {
+class AvaliadorCadastro extends StatefulWidget {
   static String tag = 'Avaliador';
-  _AvaliadorState createState() => _AvaliadorState();
+  _AvaliadorCadastroState createState() => _AvaliadorCadastroState();
 }
 
-class _AvaliadorState extends State<Avaliador> {
+class _AvaliadorCadastroState extends State<AvaliadorCadastro> {
   String _registro, _nome, _telefone;
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,7 @@ class _AvaliadorState extends State<Avaliador> {
                     backgroundColor: Colors.lightBlueAccent);
               },
               color: Colors.lightBlueAccent,
-              child: Text('Criar Conta', style: TextStyle(color: Colors.white)),
+              child: Text('Cadastrar', style: TextStyle(color: Colors.white)),
             )));
 
     return Scaffold(

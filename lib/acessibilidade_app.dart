@@ -4,7 +4,7 @@
 // Rafael Pablo Massocato
 // Engenharia de Computação 2018
 // Aplicativo para avaliação de acessibilidade
-library dependencias;
+library acessibilidade_app;
 
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -15,22 +15,39 @@ import 'package:meta/meta.dart';
 
 part 'package:app_acessibilidade/Telas/tela_sobre.dart';
 part 'package:app_acessibilidade/Telas/tela_login.dart';
-part 'package:app_acessibilidade/Telas/tela_lista_imoveis.dart';
-part 'package:app_acessibilidade/Telas/tela_lista_sanitarios.dart';
-part 'package:app_acessibilidade/Telas/tela_cadastro_conta.dart';
-part 'package:app_acessibilidade/Telas/tela_cadastro_imovel.dart';
-part 'package:app_acessibilidade/Telas/tela_cadastro_sanitario.dart';
-part 'package:app_acessibilidade/Telas/tela_editar_imovel.dart';
-part 'package:app_acessibilidade/Telas/tela_editar_sanitario.dart';
-part 'package:app_acessibilidade/Telas/tela_principal_avaliacao.dart';
-part 'package:app_acessibilidade/Telas/tela_principal_avaliacao_sanitario.dart';
+part 'package:app_acessibilidade/Telas/tela_laudo.dart';
+part 'package:app_acessibilidade/Telas/_tela_lista.dart';
+part 'package:app_acessibilidade/Telas/tela_conta_cadastro.dart';
+part 'package:app_acessibilidade/Telas/tela_imovel_cadastro.dart';
+part 'package:app_acessibilidade/Telas/tela_imovel_editar.dart';
+part 'package:app_acessibilidade/Telas/tela_imovel_lista.dart';
+part 'package:app_acessibilidade/Telas/tela_principal.dart';
+part 'package:app_acessibilidade/Telas/tela_sanitario_principal.dart';
+part 'package:app_acessibilidade/Telas/tela_sanitario_cadastro.dart';
+part 'package:app_acessibilidade/Telas/tela_sanitario_editar.dart';
+part 'package:app_acessibilidade/Telas/tela_sanitarios_lista.dart';
 part 'package:app_acessibilidade/Telas/tela_avaliacao_porta_a.dart';
 part 'package:app_acessibilidade/Telas/tela_avaliacao_porta_b.dart';
 part 'package:app_acessibilidade/Telas/tela_avaliacao_porta_c.dart';
+part 'package:app_acessibilidade/Telas/tela_avaliador_cadastro.dart';
+part 'package:app_acessibilidade/Telas/tela_avaliador_editar.dart';
 
-class Dependencias extends StatelessWidget {
+part 'package:app_acessibilidade/Classes/Sanitario.dart';
+part 'package:app_acessibilidade/Classes/Avaliador.dart';
+
+part 'package:app_acessibilidade/Servicos/sanitario_armazenar.dart';
+part 'package:app_acessibilidade/Servicos/autenticacao.dart';
+part 'package:app_acessibilidade/Servicos/enviar_email.dart';
+
+part 'package:app_acessibilidade/Widgets/sanitario_header.dart';
+part 'package:app_acessibilidade/Widgets/sanitario_widget.dart';
+part 'package:app_acessibilidade/Widgets/indicador_carregamento.dart';
+
+class Acessibilidade_app extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     Login.tag: (context) => Login(),
+    Lista.tag: (context) => Lista(),
+    Laudo.tag: (context) => Laudo(),
     ListaImoveis.tag: (context) => ListaImoveis(),
     ListaSanitarios.tag: (context) => ListaSanitarios(),
     Conta.tag: (context) => Conta(),
@@ -39,11 +56,13 @@ class Dependencias extends StatelessWidget {
     About.tag: (context) => About(),
     EditarImovel.tag: (context) => EditarImovel(),
     EditarSanitario.tag: (context) => EditarSanitario(),
-    PrincipalAvaliacao.tag: (context) => PrincipalAvaliacao(),
+    Principal.tag: (context) => Principal(),
     PrincipalAvaliacaoSanitario.tag: (context) => PrincipalAvaliacaoSanitario(),
     AvaliacaoPortaA.tag: (context) => AvaliacaoPortaA(),
     AvaliacaoPortaB.tag: (context) => AvaliacaoPortaB(),
-    AvaliacaoPortaC.tag: (context) => AvaliacaoPortaC()
+    AvaliacaoPortaC.tag: (context) => AvaliacaoPortaC(),
+    AvaliadorCadastro.tag: (context) => AvaliadorCadastro(),
+    AvaliadorEditar.tag: (context) => AvaliadorEditar(),
   };
 
   @override
