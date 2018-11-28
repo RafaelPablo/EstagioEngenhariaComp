@@ -7,17 +7,31 @@
 part of acessibilidade_app;
 
 class Lista extends StatefulWidget {
-  static String tag = 'Lista';
-  _ListaState createState() => _ListaState();
+  @override
+  _ListaState createState() => new _ListaState();
 }
 
 class _ListaState extends State<Lista> {
   Future getSanitarios() async {
     var firestore = Firestore.instance;
-
     QuerySnapshot qn = await firestore.collection("Sanitario").getDocuments();
-
     return qn.documents;
+  }
+
+  static String tag = 'Lista';
+  List<Sanitario> sanitariosLista = List();
+  Sanitario sanitario;
+  final FirebaseDatabase database = FirebaseDatabase.instance;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  DatabaseReference databaseReference;
+
+  @override
+  void initState() {
+    super.initState();
+
+    sanitario = Sanitario("", "", "", "");
+    databaseReference = database.reference().child("sanitario");
+    databaseReference.onChildAdded.listen(_aoAdicionar);
   }
 
   @override
@@ -87,7 +101,13 @@ class _ListaState extends State<Lista> {
                 backgroundColor: Colors.lightBlueAccent,
                 child: Icon(Icons.add),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Principal.tag);
+                  Navigator.of(context).pushNamed(CadastroSanitario.tag);
                 })));
+  }
+
+  void _aoAdicionar(Event event) {
+    setState(() {
+      sanitariosLista.add(Sanitario.fromSnapshot(event.snapshot));
+    });
   }
 }
