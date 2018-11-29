@@ -149,7 +149,7 @@
     },
     {
         "merged": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\res\\merged\\debug\\drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
-        "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-15.0.1.aar\\4e687cb54d851ddea33b8350e1c5c8e8\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
+        "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-16.0.1.aar\\ce715b9977700ceb43887d1dee6932fc\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
     },
     {
         "merged": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
@@ -193,7 +193,7 @@
     },
     {
         "merged": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\res\\merged\\debug\\drawable-watch-v20_common_google_signin_btn_text_dark_normal.xml.flat",
-        "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-15.0.1.aar\\4e687cb54d851ddea33b8350e1c5c8e8\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
+        "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-16.0.1.aar\\ce715b9977700ceb43887d1dee6932fc\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
         "merged": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
@@ -209,7 +209,7 @@
     },
     {
         "merged": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\res\\merged\\debug\\drawable-watch-v20_common_google_signin_btn_text_disabled.xml.flat",
-        "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-15.0.1.aar\\4e687cb54d851ddea33b8350e1c5c8e8\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
+        "source": "C:\\Users\\mas_g\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-16.0.1.aar\\ce715b9977700ceb43887d1dee6932fc\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
     },
     {
         "merged": "C:\\Users\\mas_g\\Documents\\AndroidStudioProjects\\app_acessibilidade\\build\\app\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",

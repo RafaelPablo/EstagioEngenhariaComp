@@ -12,11 +12,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
+//import 'package:printing/printing.dart';
+import 'package:pdf/pdf.dart';
 
+part 'package:app_acessibilidade/Telas/_tela_sanitario_lista.dart';
 part 'package:app_acessibilidade/Telas/tela_sobre.dart';
 part 'package:app_acessibilidade/Telas/tela_login.dart';
 part 'package:app_acessibilidade/Telas/tela_laudo.dart';
-part 'package:app_acessibilidade/Telas/_tela_lista.dart';
 part 'package:app_acessibilidade/Telas/tela_conta_cadastro.dart';
 part 'package:app_acessibilidade/Telas/tela_imovel_cadastro.dart';
 part 'package:app_acessibilidade/Telas/tela_imovel_editar.dart';

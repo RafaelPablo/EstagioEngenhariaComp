@@ -77,7 +77,7 @@ class _CadastroSanitarioState extends State<CadastroSanitario> {
               minWidth: 200.0,
               height: 42.0,
               onPressed: () {
-                Navigator.of(context).pushNamed(Login.tag);
+                Navigator.of(context).pushNamed(AvaliacaoPortaA.tag);
               },
               color: Colors.lightBlueAccent,
               child: Text('Adicionar sanitário',

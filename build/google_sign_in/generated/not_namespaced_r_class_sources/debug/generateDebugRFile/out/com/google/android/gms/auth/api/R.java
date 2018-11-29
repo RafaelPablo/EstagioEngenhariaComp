@@ -98,7 +98,6 @@ public final class R {
         public static int common_open_on_phone = 0x7f150010;
         public static int common_signin_button_text = 0x7f150011;
         public static int common_signin_button_text_long = 0x7f150012;
-        public static int pre_release_do_not_ship = 0x7f150013;
     }
     public static final class styleable {
         private styleable() {}

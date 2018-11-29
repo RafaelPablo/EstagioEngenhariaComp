@@ -4,6 +4,8 @@ description: Aplicativo para avaliação de acessibilidade.
 dependencies:
   cloud_firestore: ^0.8.2+1
 
+  pdf: ^1.0.7
+
   flutter:
     sdk: flutter
   shared_preferences: ^0.4.1

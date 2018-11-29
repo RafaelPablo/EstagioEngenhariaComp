@@ -8,9 +8,24 @@ part of acessibilidade_app;
 
 class Laudo extends StatelessWidget {
   static String tag = 'laudo';
-
   @override
   Widget build(BuildContext context) {
+    final pdf = new PDFDocument();
+    final page = new PDFPage(pdf, pageFormat: PDFPageFormat.letter);
+    final g = page.getGraphics();
+    final font = new PDFFont(pdf);
+
+    g.setColor(new PDFColor(0.0, 1.0, 1.0));
+    g.drawRect(50.0, 30.0, 100.0, 50.0);
+    g.fillPath();
+
+    g.setColor(new PDFColor(0.3, 0.3, 0.3));
+    g.drawString(
+        font, 12.0, "Resultado da avaliação!", 5.0 * PDFPageFormat.mm, 300.0);
+
+    // var file = new File('file.pdf');
+    // file.writeAsBytesSync(pdf.save());
+
     final logo = Hero(
       tag: 'logo',
       child: CircleAvatar(

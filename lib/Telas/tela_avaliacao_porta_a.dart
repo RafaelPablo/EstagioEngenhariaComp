@@ -21,7 +21,7 @@ class _AvaliacaoPortaAState extends State<AvaliacaoPortaA> {
   );
 
   final paCheckBoxAlturaPorta = CheckboxListTile(
-      value: true,
+      value: null,
       onChanged: null,
       title: Text('Possui altura de 2,10m.\n (NBR 9050:2015 - 6.11.2.4)',
           style: TextStyle(fontSize: 14.0, color: Colors.black54)));

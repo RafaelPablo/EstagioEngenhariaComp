@@ -8,6 +8,7 @@ part of acessibilidade_app;
 
 class Lista extends StatefulWidget {
   @override
+  static String tag = 'Lista';
   _ListaState createState() => new _ListaState();
 }
 
@@ -17,21 +18,19 @@ class _ListaState extends State<Lista> {
     QuerySnapshot qn = await firestore.collection("Sanitario").getDocuments();
     return qn.documents;
   }
-
-  static String tag = 'Lista';
-  List<Sanitario> sanitariosLista = List();
-  Sanitario sanitario;
-  final FirebaseDatabase database = FirebaseDatabase.instance;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  DatabaseReference databaseReference;
+//  List<Sanitario> sanitariosLista = List();
+//  Sanitario sanitario;
+//  final FirebaseDatabase database = FirebaseDatabase.instance;
+//  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+//  DatabaseReference databaseReference;
 
   @override
   void initState() {
     super.initState();
 
-    sanitario = Sanitario("", "", "", "");
-    databaseReference = database.reference().child("sanitario");
-    databaseReference.onChildAdded.listen(_aoAdicionar);
+//    sanitario = Sanitario("", "", "", "");
+//    databaseReference = database.reference().child("sanitario");
+//    databaseReference.onChildAdded.listen(_aoAdicionar);
   }
 
   @override
@@ -105,9 +104,9 @@ class _ListaState extends State<Lista> {
                 })));
   }
 
-  void _aoAdicionar(Event event) {
-    setState(() {
-      sanitariosLista.add(Sanitario.fromSnapshot(event.snapshot));
-    });
-  }
+//  void _aoAdicionar(Event event) {
+//    setState(() {
+//      sanitariosLista.add(Sanitario.fromSnapshot(event.snapshot));
+//    });
+//  }
 }
