@@ -4,9 +4,12 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Telas/tela_sanitario_cadastro.dart';
 
 class Lista extends StatefulWidget {
+  static String tag = 'Lista';
   @override
   _ListaState createState() => new _ListaState();
 }
@@ -16,22 +19,6 @@ class _ListaState extends State<Lista> {
     var firestore = Firestore.instance;
     QuerySnapshot qn = await firestore.collection("Sanitario").getDocuments();
     return qn.documents;
-  }
-
-  static String tag = 'Lista';
-  List<Sanitario> sanitariosLista = List();
-  Sanitario sanitario;
-  final FirebaseDatabase database = FirebaseDatabase.instance;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  DatabaseReference databaseReference;
-
-  @override
-  void initState() {
-    super.initState();
-
-    sanitario = Sanitario("", "", "", "");
-    databaseReference = database.reference().child("sanitario");
-    databaseReference.onChildAdded.listen(_aoAdicionar);
   }
 
   @override
@@ -103,11 +90,5 @@ class _ListaState extends State<Lista> {
                 onPressed: () {
                   Navigator.of(context).pushNamed(CadastroSanitario.tag);
                 })));
-  }
-
-  void _aoAdicionar(Event event) {
-    setState(() {
-      sanitariosLista.add(Sanitario.fromSnapshot(event.snapshot));
-    });
   }
 }
