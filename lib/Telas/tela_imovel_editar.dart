@@ -4,7 +4,8 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
 
 class EditarImovel extends StatefulWidget {
   static String tag = 'EditarImovel';

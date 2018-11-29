@@ -7,6 +7,8 @@ INJECTED from C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\mas_g\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\ffd11e751cb3e6a804c2752028a97f0c\AndroidManifest.xml:17:1-22:12
 MERGED from [:firebase_auth] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\firebase_auth\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\shared_preferences\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:sqflite] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\sqflite\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\google_sign_in\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_database] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\firebase_database\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\cloud_firestore\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-7:12
@@ -177,6 +179,10 @@ MERGED from [:firebase_auth] C:\Users\mas_g\Documents\AndroidStudioProjects\app_
 MERGED from [:firebase_auth] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\firebase_auth\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\shared_preferences\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\shared_preferences\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\sqflite\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\sqflite\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\path_provider\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\google_sign_in\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\google_sign_in\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_database] C:\Users\mas_g\Documents\AndroidStudioProjects\app_acessibilidade\build\firebase_database\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:5:5-44

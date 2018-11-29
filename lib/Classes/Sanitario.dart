@@ -4,44 +4,55 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
 
 class Sanitario {
-  final String id;
-  String identificacao;
-  String localizacao;
-  String tipoEntrada;
-  String tipoSanitario;
-  bool completed;
+  String _identificacaoSanitario;
+  String _localizacao;
+  String _tipoEntrada;
+  String _tipoSanitario;
+  int _idSanitario;
 
-  Sanitario({
-    @required this.id,
-    @required this.identificacao,
-    @required this.localizacao,
-    @required this.tipoEntrada,
-    @required this.tipoSanitario,
-    this.completed = false,
-  })  : assert(id != null && id.isNotEmpty),
-        assert(identificacao != null && identificacao.isNotEmpty),
-        assert(localizacao != null && localizacao.isNotEmpty),
-        assert(tipoEntrada != null && tipoEntrada.isNotEmpty),
-        assert(tipoSanitario != null && tipoSanitario.isNotEmpty),
-        assert(completed != null);
+  Sanitario(
+    this._idSanitario,
+    this._identificacaoSanitario,
+    this._localizacao,
+    this._tipoEntrada,
+    this._tipoSanitario,
+  );
 
-  Sanitario.fromMap(Map<String, dynamic> data)
-      : this(
-            id: data['id'],
-            identificacao: data['identificacao'],
-            localizacao: data['localizacao'],
-            tipoEntrada: data['tipoEntrada'],
-            tipoSanitario: data['tipoSanitario'],
-            completed: data['completed'] ?? false);
+  Sanitario.map(dynamic obj) {
+    this._idSanitario = obj['idSanitario'];
+    this._identificacaoSanitario = obj['identificacao'];
+    this._localizacao = obj['localizacao'];
+    this._tipoEntrada = obj['tipoEntrada'];
+    this._tipoSanitario = obj['tipoSanitario'];
+  }
 
-  Map<String, dynamic> toMap() => {
-        'id': this.id,
-        'identificacao': this.identificacao,
-        'localizacao': this.localizacao,
-        'tipoEntrada': this.tipoEntrada,
-        'tipoSanitario': this.tipoSanitario,
-      };
+  String get tipoSanitario => _tipoSanitario;
+  String get tipoEntrada => _tipoEntrada;
+  String get localizacao => _localizacao;
+  String get identificacao => _identificacaoSanitario;
+  int get idSanitario => _idSanitario;
+
+  Map<String, dynamic> toMap() {
+    var map = new Map<String, dynamic>();
+    map["identificacao"] = _identificacaoSanitario;
+    map["localizacao"] = _localizacao;
+    map["tipoEntrada"] = _tipoEntrada;
+    map["tipoSanitario"] = _tipoSanitario;
+    map["idSanitario"] = _idSanitario;
+
+    if (idSanitario != null) {
+      map["idSanitario"] = _idSanitario;
+    }
+    return map;
+  }
+
+  Sanitario.fromMap(Map<String, dynamic> map) {
+    this._identificacaoSanitario = map["_identificacaoSanitario"];
+    this._localizacao = map["localizacao"];
+    this._tipoEntrada = map["tipoEntrada"];
+    this._tipoSanitario = map["tipoSanitario"];
+    this._idSanitario = map["idSanitario"];
+  }
 }

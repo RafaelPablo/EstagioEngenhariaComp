@@ -13,7 +13,10 @@ dependencies:
   firebase_auth: ^0.5.20
   google_sign_in: ^3.2.1
 
-cupertino_icons: ^0.1.2
+  cupertino_icons: ^0.1.2
+
+  sqflite: any
+  path_provider: ^0.4.1
 
 dev_dependencies:
   flutter_test:

@@ -4,14 +4,19 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Telas/tela_login.dart';
+import 'package:app_acessibilidade/Classes/Conta.dart';
+import 'package:app_acessibilidade/Servicos/database.dart';
 
-class Conta extends StatefulWidget {
-  static String tag = 'Conta';
-  _ContaState createState() => _ContaState();
+class CadastroConta extends StatefulWidget {
+  static String tag = 'CadastroConta';
+  _CadastroContaState createState() => _CadastroContaState();
 }
 
-class _ContaState extends State<Conta> {
+class _CadastroContaState extends State<CadastroConta> {
+  var db = new dbDatabase();
   String _email, _senha;
   @override
   Widget build(BuildContext context) {
@@ -54,16 +59,8 @@ class _ContaState extends State<Conta> {
         });
 
     void _criarConta() {
-      Firestore.instance.runTransaction((Transaction transaction) async {
-        CollectionReference reference =
-            Firestore.instance.collection('avaliador');
-
-        await reference.add({
-          "Chave": null,
-          "Email": "$_email",
-          "Senha": "$_senha",
-        });
-      });
+      new CircularProgressIndicator(backgroundColor: Colors.lightBlueAccent);
+      _createConta();
       Navigator.of(context).pushNamed(Login.tag);
     }
 
@@ -76,11 +73,7 @@ class _ContaState extends State<Conta> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: () {
-                _criarConta();
-                new CircularProgressIndicator(
-                    backgroundColor: Colors.lightBlueAccent);
-              },
+              onPressed: _criarConta,
               color: Colors.lightBlueAccent,
               child: Text('Criar Conta', style: TextStyle(color: Colors.white)),
             )));
@@ -110,5 +103,10 @@ class _ContaState extends State<Conta> {
         ],
       )),
     );
+  }
+
+  Future _createConta() async {
+    int savedConta = await db.saveConta(new Conta(1, _email, _senha));
+    print("Conta salva $savedConta");
   }
 }

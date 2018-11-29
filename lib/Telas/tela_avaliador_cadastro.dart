@@ -4,7 +4,9 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Telas/tela_principal.dart';
 
 class AvaliadorCadastro extends StatefulWidget {
   static String tag = 'Avaliador';
@@ -67,17 +69,17 @@ class _AvaliadorCadastroState extends State<AvaliadorCadastro> {
         });
 
     void _criarConta() {
-      Firestore.instance.runTransaction((Transaction transaction) async {
-        CollectionReference reference =
-            Firestore.instance.collection('avaliador');
-
-        await reference.add({
-          "Chave": null,
-          "Nome": "$_nome",
-          "Registro": "$_registro",
-          "Telefone": "$_telefone"
-        });
-      });
+//      Firestore.instance.runTransaction((Transaction transaction) async {
+//        CollectionReference reference =
+//            Firestore.instance.collection('avaliador');
+//
+//        await reference.add({
+//          "Chave": null,
+//          "Nome": "$_nome",
+//          "Registro": "$_registro",
+//          "Telefone": "$_telefone"
+//        });
+//      });
       Navigator.of(context).pushNamed(Principal.tag);
     }
 

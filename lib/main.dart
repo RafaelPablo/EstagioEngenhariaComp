@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 import 'acessibilidade_app.dart';
 
-void main() {
+void main() async {
   //debugPaintSizeEnabled = true;
   runApp(new Acessibilidade_app());
 }

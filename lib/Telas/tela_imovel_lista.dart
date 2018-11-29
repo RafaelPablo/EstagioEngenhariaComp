@@ -4,7 +4,13 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Telas/tela_principal.dart';
+import 'package:app_acessibilidade/Telas/tela_avaliador_cadastro.dart';
+import 'package:app_acessibilidade/Telas/tela_imovel_cadastro.dart';
+import 'package:app_acessibilidade/Classes/Imovel.dart';
+import 'package:app_acessibilidade/Servicos/database.dart';
 
 class ListaImoveis extends StatefulWidget {
   static String tag = 'ListaImoveis';
@@ -12,12 +18,20 @@ class ListaImoveis extends StatefulWidget {
 }
 
 class _ListaImoveisState extends State<ListaImoveis> {
+//  Future getImoveis() async {
+//    var firestore = Firestore.instance;
+//    QuerySnapshot qn = await firestore.collection("Imovel").getDocuments();
+//    return qn.documents;
+//  }
+  var db = new dbDatabase();
+  List _imoveis;
+
   Future getImoveis() async {
-    var firestore = Firestore.instance;
-
-    QuerySnapshot qn = await firestore.collection("Imovel").getDocuments();
-
-    return qn.documents;
+    _imoveis = await db.getAllImovels();
+    for (int i = 0; i < _imoveis?.length ?? 0; i++) {
+      Imovel imovel = Imovel.map(_imoveis[i]);
+    }
+    return _imoveis;
   }
 
   @override
@@ -32,6 +46,36 @@ class _ListaImoveisState extends State<ListaImoveis> {
               ),
               title: new Text("Imóveis", style: TextStyle(color: Colors.white)),
             ),
+            drawer: new Drawer(
+              child: new ListView(
+                primary: false,
+                children: <Widget>[
+                  new DrawerHeader(
+                    child: new Center(
+                      child: new Text(
+                        "Menu",
+                        // style: themeData.textTheme.title,
+                      ),
+                    ),
+                  ),
+                  new ListTile(
+                    title: const Text('Avaliador', textAlign: TextAlign.right),
+                    trailing: const Icon(Icons.assignment_ind),
+                    onTap: () async {
+                      Navigator.of(context).pushNamed(AvaliadorCadastro.tag);
+                    },
+                  ),
+                  new ListTile(
+                    title: const Text('Logout', textAlign: TextAlign.right),
+                    trailing: const Icon(Icons.exit_to_app),
+                    onTap: () async {
+                      //await signOutWithGoogle();
+                      Navigator.of(context).pushReplacementNamed('/');
+                    },
+                  ),
+                ],
+              ),
+            ),
             body: Center(
                 child: FutureBuilder(
                     future: getImoveis(),
@@ -41,19 +85,21 @@ class _ListaImoveisState extends State<ListaImoveis> {
                             backgroundColor: Colors.lightBlueAccent);
                       } else {
                         return ListView.builder(
-                            //itemCount: snapshot.data.lenght,
-                            itemCount: 1,
-                            itemBuilder: (context, index) {
+                            itemCount: _imoveis?.length ?? 0,
+                            itemBuilder: (_, int position) {
                               return ListTile(
                                 title: Text(
-                                  snapshot.data[index].data["Identificacao"],
+                                  Imovel.fromMap(_imoveis[position])
+                                          .identificacao ??
+                                      '',
                                   style: TextStyle(
                                     fontSize: 22.0,
                                     color: Colors.blue,
                                   ),
                                 ),
                                 subtitle: Text(
-                                  snapshot.data[index].data["Endereco"],
+                                  "${Imovel.fromMap(_imoveis[position]).logradouro}, ${Imovel.fromMap(_imoveis[position]).numero}" ??
+                                      '',
                                   style: new TextStyle(
                                     fontSize: 18.0,
                                     fontStyle: FontStyle.italic,
@@ -91,7 +137,8 @@ class _ListaImoveisState extends State<ListaImoveis> {
                 backgroundColor: Colors.lightBlueAccent,
                 child: Icon(Icons.add),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Principal.tag);
+                  //Navigator.of(context).pushNamed(Principal.tag);
+                  Navigator.of(context).pushNamed(CadastroImovel.tag);
                 })));
   }
 }

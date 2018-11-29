@@ -4,7 +4,10 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Servicos/database.dart';
+import 'package:app_acessibilidade/Classes/Sanitario.dart';
 
 class CadastroSanitario extends StatefulWidget {
   static String tag = 'CadastroSanitario';
@@ -12,7 +15,12 @@ class CadastroSanitario extends StatefulWidget {
 }
 
 class _CadastroSanitarioState extends State<CadastroSanitario> {
-  @override
+  var db = new dbDatabase();
+  var tipoSanitarioC = new TextEditingController();
+  var tipoEntradaC = new TextEditingController();
+  var localizacaoC = new TextEditingController();
+  var identificacaoC = new TextEditingController();
+
   Widget build(BuildContext context) {
     final logo = Hero(
       tag: 'logo',
@@ -31,7 +39,7 @@ class _CadastroSanitarioState extends State<CadastroSanitario> {
 
     final identificacao = TextFormField(
       autofocus: false,
-      initialValue: '',
+      controller: identificacaoC,
       decoration: InputDecoration(
           hintText: 'Identificação',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -39,18 +47,22 @@ class _CadastroSanitarioState extends State<CadastroSanitario> {
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-    final localizacao = TextFormField(
-      autofocus: false,
-      initialValue: '',
+    final localizacao = TextField(
+      //autofocus: false,
+      controller: localizacaoC,
       decoration: InputDecoration(
           hintText: 'Localização',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+//      onChanged(value){
+//        this.localizacaoC = value;
+//    },
     );
 
     final tipoEntrada = TextFormField(
       autofocus: false,
+      controller: tipoEntradaC,
       decoration: InputDecoration(
           hintText: 'Tipo de entrada',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -60,6 +72,7 @@ class _CadastroSanitarioState extends State<CadastroSanitario> {
 
     final tipoSanitario = TextFormField(
       autofocus: false,
+      controller: tipoSanitarioC,
       decoration: InputDecoration(
           hintText: 'Tipo do sanitário',
           contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -76,9 +89,7 @@ class _CadastroSanitarioState extends State<CadastroSanitario> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: () {
-                Navigator.of(context).pushNamed(Login.tag);
-              },
+              onPressed: _createSanitario,
               color: Colors.lightBlueAccent,
               child: Text('Adicionar sanitário',
                   style: TextStyle(color: Colors.white)),
@@ -114,5 +125,16 @@ class _CadastroSanitarioState extends State<CadastroSanitario> {
         ],
       )),
     );
+  }
+
+  Future _createSanitario() async {
+    int savedSanitario = await db.saveSanitario(new Sanitario(
+        1,
+        identificacaoC.text,
+        localizacaoC.text,
+        tipoEntradaC.text,
+        tipoSanitarioC.text));
+
+    print("Sanitario salvo $savedSanitario");
   }
 }

@@ -4,7 +4,11 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+//part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Telas/tela_sanitario_lista.dart';
+import 'package:app_acessibilidade/Telas/tela_laudo.dart';
+import 'package:app_acessibilidade/Telas/tela_imovel_editar.dart';
 
 class Principal extends StatefulWidget {
   static String tag = 'PrincipalAvaliacao';
@@ -81,7 +85,7 @@ class _PrincipalState extends State<Principal> {
               minWidth: 200.0,
               height: 42.0,
               onPressed: () {
-                Navigator.of(context).pushNamed(Lista.tag);
+                Navigator.of(context).pushNamed(ListaSanitarios.tag);
               },
               color: Colors.lightBlueAccent,
               child: Text('Sanitários', style: TextStyle(color: Colors.white)),

@@ -4,7 +4,10 @@
 *  Rafael Pablo Massocato
 *  Estágio Engenharia de Computação 2018
 *  Aplicativo para avaliação de acessibilidade */
-part of acessibilidade_app;
+import 'package:flutter/material.dart';
+import 'package:app_acessibilidade/Telas/tela_sobre.dart';
+import 'package:app_acessibilidade/Telas/tela_imovel_lista.dart';
+import 'package:app_acessibilidade/Telas/tela_conta_cadastro.dart';
 
 String _email, _senha;
 
@@ -99,7 +102,7 @@ class _LoginState extends State<Login> {
             child: MaterialButton(
               minWidth: 200.0,
               height: 42.0,
-              onPressed: signInWithGoogle,
+              // onPressed: signInWithGoogle,
               color: Colors.lightBlueAccent,
               child: Text('Acessar com Google',
                   style: TextStyle(color: Colors.white)),
@@ -108,7 +111,7 @@ class _LoginState extends State<Login> {
     final createLabel = FlatButton(
       child: Text('Criar conta', style: TextStyle(color: Colors.black54)),
       onPressed: () {
-        Navigator.of(context).pushNamed(Conta.tag);
+        Navigator.of(context).pushNamed(CadastroConta.tag);
       },
     );
 
